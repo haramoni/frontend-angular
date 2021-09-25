@@ -1,0 +1,65 @@
+<div class="container-form">
+  <h1>Cadastro do cliente:</h1>
+  <form  class="example-form">
+    <table class="field-first-line" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="field-first-line" appearance="fill">
+            <mat-label>Nome do Cliente</mat-label>
+            <input
+              name="clientName"
+              type="text"
+              matInput
+              value="{{dataSource[0].nome}}"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="field-first-line" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input type="number" matInput />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="field-first-line" appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input type="number" matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="field-second-line">
+      <tr>
+        <td>
+          <mat-form-field class="field-second-line" appearance="fill">
+            <mat-label>Nome do Pet</mat-label>
+            <input matInput value="" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="field-second-line" appearance="fill">
+            <mat-label>Espécie</mat-label>
+            <input matInput value="" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="field-second-line" appearance="fill">
+            <mat-label>Idade</mat-label>
+            <input type="number" matInput value="" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="field-second-line" appearance="fill">
+            <mat-label>Porte</mat-label>
+            <input type="text" matInput value="" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <button mat-raised-button color="primary">Enviar formulário</button>
+  </form>
+
+  
+</div>

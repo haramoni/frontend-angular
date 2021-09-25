@@ -1,0 +1,20 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+}
+
+.field-first-line {
+  width: 330px;
+  font-size: 17px;
+}
+
+
+.field-second-line {
+  width: 246px;
+  font-size: 17px;
+ 
+
+}
+
