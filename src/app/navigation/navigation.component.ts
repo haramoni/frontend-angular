@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
+import { FormBuilder } from "@angular/forms";
+import { AgendaService } from "../shared/service/agenda.service";
 
 @Component({
   selector: "app-navigation",
@@ -18,8 +20,10 @@ import { map, shareReplay } from "rxjs/operators";
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
           <a mat-list-item href="/">Home</a>
-          <a mat-list-item href="/agenda">Agendamentos</a>
-          <a mat-list-item href="/contact">Contato</a>
+          <a mat-list-item href="/newAppointment" (click)="teste()"
+            >Novo Agendamento</a
+          >
+          <a mat-list-item href="/getAppointment">Agendamentos</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
@@ -69,5 +73,14 @@ export class NavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+
+    private fb: FormBuilder,
+    private rest: AgendaService
+  ) {}
+
+  teste() {
+    this.rest.postAgenda().subscribe((result) => {});
+  }
 }

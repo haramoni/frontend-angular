@@ -15,14 +15,21 @@ import { FormComponent } from './view/form/form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatInputModule} from '@angular/material/input';
+import { CreateAppointmentComponent } from './view/create-appointment/create-appointment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GetAppointmentsComponent } from './view/get-appointments/get-appointments.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    FormComponent
+    FormComponent,
+    CreateAppointmentComponent,
+    GetAppointmentsComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -35,6 +42,8 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatBadgeModule,
     MatInputModule,
+    ReactiveFormsModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

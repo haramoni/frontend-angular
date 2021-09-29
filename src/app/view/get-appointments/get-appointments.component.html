@@ -1,0 +1,11 @@
+<div class="container">
+  <ng-container *ngFor="let appointment of appointmentPrevious">
+    <div class="card">
+      <h2 class="card-title">Agendamento</h2>
+      <span><b>CPF:</b>  {{ appointment.cpf }}</span>
+      <span>{{ data }} - {{ appointment.hora }}:00</span>
+      <span><b>Serviço:</b>  {{appointment.descricao}}</span>
+      
+    </div>
+  </ng-container>
+</div>

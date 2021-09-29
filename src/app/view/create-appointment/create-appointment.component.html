@@ -1,0 +1,33 @@
+<div class="container-form">
+
+  <h1 mat-dialog-title>Novo cadastro</h1>
+  <div mat-dialog-content>
+    <form class="example-form" [formGroup]="appointmentForm">
+      <div class="container-contato" fxLayout="row wrap">
+        <mat-form-field appearance="fill">
+          <mat-label>Horários disponíveis</mat-label>
+          <select formControlName="Hora" matNativeControl required  >
+            <option  *ngFor="let appointment of newArrayTime" value="{{appointment.hora}}">{{appointment.hora}}</option>
+          </select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>CPF - Cliente</mat-label>
+          <select formControlName="CPF" matNativeControl required  >
+            <option  *ngFor="let client of clientList" value="{{client.cpf}}">{{client.nomeTutor}} - {{client.cpf}}</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Descrição do Serviço</mat-label>
+          <input matInput placeholder="" formControlName="Descricao" name="Descricao" />
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="newAppointment()" >Criar Agendamento</button>
+  </div>
+</div>

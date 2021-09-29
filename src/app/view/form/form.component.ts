@@ -1,35 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-
-const DATA = [{
-  nome: "Júlia",
-  CPF: 11702077900,
-  phone: 991397981,
-  petName: "Magoo",
-  especie: "Cachorro",
-  age: 1,
-  porte: "Grande"
-}]
-
+import { Component, Input, OnInit } from "@angular/core";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
+import { ClientService } from "src/app/shared/service/client.service";
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: "app-form",
+  templateUrl: "./form.component.html",
+  styleUrls: ["./form.component.css"],
 })
 export class FormComponent implements OnInit {
-  dataSource = DATA;
+  public userForm!: FormGroup;
 
-  @Input('a')
-  clientName!: string;
-
-  constructor() { 
-  
-
-  }
+  constructor(private fb: FormBuilder, private rest: ClientService) {}
 
   ngOnInit(): void {
-   
+    this.userForm = this.fb.group({
+      NomeTutor: ["", [Validators.required]],
+      CPF: ["", [Validators.required]],
+      Telefone: ["", [Validators.required]],
+      NomePet: ["", [Validators.required]],
+      Especie: ["", [Validators.required]],
+      Idade: ["", [Validators.required]],
+      Porte: ["", [Validators.required]],
+    });
   }
 
+  createLive() {
+    console.log(this.userForm.value);
+    this.rest.postNewClient(this.userForm.value).subscribe((result) => {
+    });
+    // this.userForm.reset();
+    // window.location.reload();
+  }
 }
