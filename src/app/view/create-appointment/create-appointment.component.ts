@@ -51,7 +51,6 @@ export class CreateAppointmentComponent implements OnInit {
   getClient() {
     this.clientService.getClients().subscribe((data) => {
       this.clientList = data;
-      console.log(data);
     })
   }
 

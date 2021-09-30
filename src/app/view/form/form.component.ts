@@ -30,10 +30,7 @@ export class FormComponent implements OnInit {
   }
 
   createLive() {
-    console.log(this.userForm.value);
     this.rest.postNewClient(this.userForm.value).subscribe((result) => {
     });
-    // this.userForm.reset();
-    // window.location.reload();
   }
 }
