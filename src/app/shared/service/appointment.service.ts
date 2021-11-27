@@ -25,4 +25,9 @@ export class AppointmentService {
   public postNewAppointment(form: Appointment): Observable<any> {
     return this.httpClient.post<any>(this.apiUrl + "cadastrar", form)
   }
+
+
+  public deleteAppointment(id: any): Observable<any> {
+    return this.httpClient.delete<any>(this.apiUrl + "deletar/" + id, id)
+  }
 }

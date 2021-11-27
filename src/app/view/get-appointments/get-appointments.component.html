@@ -5,7 +5,7 @@
       <span><b>CPF:</b>  {{ appointment.cpf }}</span>
       <span>{{ data }} - {{ appointment.hora }}:00</span>
       <span><b>Serviço:</b>  {{appointment.descricao}}</span>
-      
+      <button (click)="delete(appointment.id)">DELETAR</button>
     </div>
   </ng-container>
 </div>

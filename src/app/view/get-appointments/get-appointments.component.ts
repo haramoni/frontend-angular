@@ -11,6 +11,7 @@ export class GetAppointmentsComponent implements OnInit {
   appointmentPrevious!: Appointment[];
   data!: string;
   hour!: any;
+  cpf: any;
 
   constructor(public appointmentService: AppointmentService) {}
 
@@ -23,11 +24,18 @@ export class GetAppointmentsComponent implements OnInit {
       this.appointmentPrevious = data;
 
       data.map((item: any, index: any) => {
+        console.log(item);
         let manipulatedValues = item.data.split("T");
         let formattedData = manipulatedValues[0].split("-");
-
         this.data = `${formattedData[2]}/${formattedData[1]}/${formattedData[0]}`;
       });
     });
+
+  }
+
+  delete(id: number) {
+    this.appointmentService.deleteAppointment(id).subscribe((data) => {
+      window.location.reload();
+    })
   }
 }
