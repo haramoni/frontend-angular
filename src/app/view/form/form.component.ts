@@ -6,7 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 import { ClientService } from "src/app/shared/service/client.service";
-
+import { Router } from '@angular/router';
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",
@@ -15,7 +15,7 @@ import { ClientService } from "src/app/shared/service/client.service";
 export class FormComponent implements OnInit {
   public userForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private rest: ClientService) {}
+  constructor(private fb: FormBuilder, private rest: ClientService, private router: Router) {}
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -32,5 +32,6 @@ export class FormComponent implements OnInit {
   createLive() {
     this.rest.postNewClient(this.userForm.value).subscribe((result) => {
     });
+    this.router.navigateByUrl('/newAppointment');
   }
 }
