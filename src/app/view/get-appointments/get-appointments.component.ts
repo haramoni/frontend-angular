@@ -24,7 +24,6 @@ export class GetAppointmentsComponent implements OnInit {
       this.appointmentPrevious = data;
 
       data.map((item: any, index: any) => {
-        console.log(item);
         let manipulatedValues = item.data.split("T");
         let formattedData = manipulatedValues[0].split("-");
         this.data = `${formattedData[2]}/${formattedData[1]}/${formattedData[0]}`;
