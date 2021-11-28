@@ -1,0 +1,11 @@
+<div class="container">
+    <ng-container *ngFor="let client of clientePrevious">
+        <div class="card">
+            <h2 class="card-title">Clientes</h2>
+            <span><b>CPF:</b> {{ client.cpf }}</span>
+            <span><b>Nome:</b> {{ client.nomeTutor }}</span>
+            <span><b>Pet:</b> {{ client.nomePet }}</span>
+            <span><b>Espécie:</b> {{ client.especie }}</span>
+        </div>
+    </ng-container>
+</div>

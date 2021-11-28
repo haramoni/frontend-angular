@@ -24,6 +24,7 @@ import { AgendaService } from "../shared/service/agenda.service";
             >Novo Agendamento</a
           >
           <a mat-list-item href="/getAppointment">Agendamentos</a>
+          <a mat-list-item href="/getClient">Clientes</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>

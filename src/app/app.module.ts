@@ -19,6 +19,7 @@ import { CreateAppointmentComponent } from './view/create-appointment/create-app
 import { HttpClientModule } from '@angular/common/http';
 import { GetAppointmentsComponent } from './view/get-appointments/get-appointments.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GetClientComponent } from './view/get-client/get-client.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormComponent,
     CreateAppointmentComponent,
     GetAppointmentsComponent,
+    GetClientComponent
   ],
   imports: [
     HttpClientModule,
