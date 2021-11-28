@@ -7,7 +7,7 @@ import { Appointment } from "../model/appointment.model";
   providedIn: "root",
 })
 export class AppointmentService {
-  apiUrl = "https://localhost:5001/ecommerceapi/servicos/";
+  apiUrl = "http://localhost:5000/ecommerceapi/servicos/";
 
   httpOptions = {
     headers: new HttpHeaders({

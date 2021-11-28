@@ -8,7 +8,7 @@ import { Client } from "../model/client.model";
 })
 export class ClientService {
 
-  apiUrl = "https://localhost:5001/ecommerceapi/cliente/";
+  apiUrl = "http://localhost:5000/ecommerceapi/cliente/";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",

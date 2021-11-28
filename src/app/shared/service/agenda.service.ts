@@ -8,7 +8,7 @@ import { Agenda } from "../model/agenda.model";
 })
 export class AgendaService {
 
-  apiUrl = "https://localhost:5001/ecommerceapi/agenda/";
+  apiUrl = "http://localhost:5000/ecommerceapi/agenda/";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
