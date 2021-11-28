@@ -20,7 +20,7 @@ import { AgendaService } from "../shared/service/agenda.service";
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
           <a mat-list-item href="/">Home</a>
-          <a mat-list-item href="/newAppointment" (click)="teste()"
+          <a mat-list-item href="/newAppointment"
             >Novo Agendamento</a
           >
           <a mat-list-item href="/getAppointment">Agendamentos</a>
@@ -80,7 +80,8 @@ export class NavigationComponent {
     private rest: AgendaService
   ) {}
 
-  teste() {
-    this.rest.postAgenda().subscribe((result) => {});
-  }
+  // Função que deve ser rodada apenas 1 vez
+  // teste() {
+  //   this.rest.postAgenda().subscribe((result) => {});
+  // }
 }

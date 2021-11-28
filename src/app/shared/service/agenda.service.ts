@@ -17,9 +17,11 @@ export class AgendaService {
 
   constructor(private httpClient: HttpClient) {}
 
-  postAgenda(): Observable<Agenda> {
-    return this.httpClient.post<any>(this.apiUrl + 'iniciar', '');
-  }
+  // Função para ser rodada 1 vez para adicionar os horarios
+  //Adicionar o event de click chamando teste() 
+  // postAgenda(): Observable<Agenda> {
+  //   return this.httpClient.post<any>(this.apiUrl + 'iniciar', '');
+  // }
 
   getAgenda(): Observable<any> {
     return this.httpClient.get<any>(this.apiUrl + "listarHorarioDisponivel")
